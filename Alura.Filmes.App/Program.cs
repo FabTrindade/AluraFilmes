@@ -1,4 +1,5 @@
 ﻿using Alura.Filmes.App.Dados;
+using Alura.Filmes.App.Extensions;
 using System;
 
 namespace Alura.Filmes.App
@@ -8,8 +9,9 @@ namespace Alura.Filmes.App
         static void Main(string[] args)
         {
             using (var context = new AtorFilmesContexto())
-            {                
-                foreach(var ator in context.Atores)
+            {
+                context.LogSQLToConsole();
+                foreach (var ator in context.Atores)
                 {
                     Console.WriteLine(ator);
                 }

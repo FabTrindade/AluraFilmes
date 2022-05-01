@@ -125,6 +125,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\20220501232724_Initial.cs" />
+    <Compile Include="Migrations\20220501232724_Initial.designer.cs">
+      <DependentUpon>20220501232724_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\AtorFilmesContextoModelSnapshot.cs" />
     <Compile Include="Negocio\Ator.cs" />
     <Compile Include="Dados\AtorFilmesContexto.cs" />
     <Compile Include="Extensions\DbContextExtensions.cs" />
