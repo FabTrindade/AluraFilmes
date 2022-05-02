@@ -13,16 +13,18 @@ namespace Alura.Filmes.App
         {
             using (var context = new AtorFilmesContexto())
             {
-                var filmes = context.Filmes
-                    .Where(a => a.Duracao > 180);
-                    
-                foreach(var filme in filmes)
+                context.LogSQLToConsole();
+
+                foreach (var item in context.Elenco)
                 {
-                    Console.WriteLine(filme);
-                    Console.WriteLine("Última atualização: " + context.Entry(filme).Property("last_update").CurrentValue);
-                    Console.WriteLine();
+                    var entidade = context.Entry(item);
+                    var filmId = entidade.Property("film_id").CurrentValue;
+                    var atorId = entidade.Property("actor_id").CurrentValue;
+                    var lastUpd = entidade.Property("last_update").CurrentValue;
+
+                    Console.WriteLine($"Filme {filmId}, Ator {atorId}, LastUpdadte {lastUpd}");
+
                 }
-                Console.WriteLine("Total de filmes encontrados: " + filmes.Count());
             }
         }
     }
