@@ -133,6 +133,7 @@
     <Compile Include="Negocio\Ator.cs" />
     <Compile Include="Dados\AtorFilmesContexto.cs" />
     <Compile Include="Extensions\DbContextExtensions.cs" />
+    <Compile Include="Negocio\Filme.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
