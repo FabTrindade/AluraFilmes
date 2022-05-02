@@ -1,7 +1,9 @@
 ﻿using Alura.Filmes.App.Dados;
 using Alura.Filmes.App.Extensions;
 using Alura.Filmes.App.Negocio;
+using Microsoft.EntityFrameworkCore;
 using System;
+using System.Linq;
 
 namespace Alura.Filmes.App
 {
@@ -11,17 +13,15 @@ namespace Alura.Filmes.App
         {
             using (var context = new AtorFilmesContexto())
             {
-                Ator ator = new Ator()
+                var atores = context.Atores
+                    //.First();
+                    .OrderByDescending(a => EF.Property<DateTime>(a, "last_update"))
+                    .Take(10);
+
+                foreach(var ator in atores)
                 {
-                    PrimeiroNome = "Leonardo",
-                    UltimoNome = "Di Caprio"
-                };
-                //context.Entry(ator).Property("last_update").CurrentValue = DateTime.Now;
-
-                context.LogSQLToConsole();
-
-                context.Atores.Add(ator);
-                context.SaveChanges();
+                    Console.WriteLine(ator + "-" + context.Entry(ator).Property("last_update").CurrentValue);
+                }
             }
         }
     }
