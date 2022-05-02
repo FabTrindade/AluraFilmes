@@ -11,7 +11,7 @@ using System;
 namespace Alura.Filmes.App.Migrations
 {
     [DbContext(typeof(AtorFilmesContexto))]
-    [Migration("20220502000320_Initial")]
+    [Migration("20220502003647_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -38,7 +38,9 @@ namespace Alura.Filmes.App.Migrations
                         .HasColumnType("varchar(45)");
 
                     b.Property<DateTime>("last_update")
-                        .HasColumnType("DATETIME");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("DATETIME")
+                        .HasDefaultValueSql("getdate()");
 
                     b.HasKey("Id");
 

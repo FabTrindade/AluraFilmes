@@ -16,8 +16,7 @@ namespace Alura.Filmes.App
                     PrimeiroNome = "Leonardo",
                     UltimoNome = "Di Caprio"
                 };
-
-                context.Entry(ator).Property("last_update").CurrentValue = DateTime.Now;
+                //context.Entry(ator).Property("last_update").CurrentValue = DateTime.Now;
 
                 context.LogSQLToConsole();
 

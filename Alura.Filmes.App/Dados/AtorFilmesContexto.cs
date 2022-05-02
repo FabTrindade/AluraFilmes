@@ -37,6 +37,7 @@ namespace Alura.Filmes.App.Dados
             modelBuilder.Entity<Ator>()
                 .Property<DateTime>("last_update")
                 .HasColumnType("DATETIME")
+                .HasDefaultValueSql("getdate()")
                 .IsRequired();
 
         }

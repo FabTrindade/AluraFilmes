@@ -125,9 +125,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\20220502000320_Initial.cs" />
-    <Compile Include="Migrations\20220502000320_Initial.designer.cs">
-      <DependentUpon>20220502000320_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\20220502003647_Initial.cs" />
+    <Compile Include="Migrations\20220502003647_Initial.designer.cs">
+      <DependentUpon>20220502003647_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\AtorFilmesContextoModelSnapshot.cs" />
     <Compile Include="Negocio\Ator.cs" />
