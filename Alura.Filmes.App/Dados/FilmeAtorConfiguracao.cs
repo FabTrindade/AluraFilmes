@@ -19,6 +19,18 @@ namespace Alura.Filmes.App.Dados
                 .IsRequired();
 
             builder.HasKey("film_id", "actor_id");
+
+            builder
+                .HasOne(fa => fa.Filme)
+                .WithMany(f => f.Atores)
+                .HasForeignKey("film_id");
+            
+            builder 
+                .HasOne(fa => fa.Ator)
+                .WithMany(f => f.Filmes)
+                .HasForeignKey("actor_id");
+
+
         }
     }
 }
