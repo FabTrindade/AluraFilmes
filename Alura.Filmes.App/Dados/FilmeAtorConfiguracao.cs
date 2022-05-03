@@ -10,8 +10,8 @@ namespace Alura.Filmes.App.Dados
         public void Configure(EntityTypeBuilder<FilmeAtor> builder)
         {
             builder.ToTable("film_actor");
-            builder.Property<int>("film_id").IsRequired();
-            builder.Property<int>("actor_id").IsRequired();
+            builder.Property<int>("film_id").IsRequired(); //Foreign key (with shadow property)
+            builder.Property<int>("actor_id").IsRequired();//Foreign key (with shadow property)
 
             builder.Property<DateTime>("last_update")
                 .HasColumnType("datetime")
