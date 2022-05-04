@@ -22,28 +22,12 @@ namespace Alura.Filmes.App
                     .First();
 
                 Console.WriteLine(filme);
-                Console.WriteLine("Elenco:");
+                Console.WriteLine("Categorias:");
 
-                foreach (var actor in filme.Atores)
+                foreach (var categoria in filme.Categorias)
                 {
-                    Console.WriteLine(actor.Ator);
+                    Console.WriteLine(categoria.Categoria);
                 }
-
-
-                var ator = context.Atores
-                    .Include(f => f.Filmes)
-                    .ThenInclude(fa => fa.Filme)
-                    .First();
-
-                Console.WriteLine(ator);
-                Console.WriteLine("Filmes:");
-
-                foreach (var film in ator.Filmes)
-                {
-                    Console.WriteLine(film.Filme);
-                }
-
-                Console.WriteLine("Quantidade de filmes encontrados:" + ator.Filmes.Count);
 
             }
         }
