@@ -16,7 +16,7 @@ namespace Alura.Filmes.App.Dados
         {
             builder.ToTable("film_category");
             builder.Property<int>("film_id").IsRequired();
-            builder.Property<int>("category_id").IsRequired();
+            builder.Property<byte>("category_id").IsRequired();
 
 
             builder.Property<DateTime>("last_update")

@@ -14,6 +14,7 @@ namespace Alura.Filmes.App.Dados
 
             builder
                 .Property(a => a.Id)
+                .HasColumnType("tinyint")
                 .HasColumnName("category_id");
 
             builder
@@ -25,7 +26,7 @@ namespace Alura.Filmes.App.Dados
 
             builder
                 .Property<DateTime>("last_update")
-                .HasColumnName("datetime")
+                .HasColumnType("datetime")
                 .HasDefaultValueSql("getdate()")
                 .IsRequired();
         }

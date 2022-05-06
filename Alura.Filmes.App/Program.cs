@@ -15,19 +15,42 @@ namespace Alura.Filmes.App
             {
 
                 context.LogSQLToConsole();
-
+                 
+                //Selecione primeiro filme o mostra sua categoria
                 var filme = context.Filmes
-                    .Include(f => f.Atores)
-                    .ThenInclude(fa => fa.Ator)
-                    .First();
+                     .Include(c => c.Categorias)
+                     .ThenInclude(fc => fc.Categoria)
+                     .First();
 
-                Console.WriteLine(filme);
-                Console.WriteLine("Categorias:");
+                 Console.WriteLine(filme);
+                 Console.WriteLine("Categorias:");
 
-                foreach (var categoria in filme.Categorias)
+                 foreach (var cat in filme.Categorias)
+                 {
+                     Console.WriteLine(cat.Categoria);
+                 }
+
+
+
+                //Seleciona uma categoria e mostra seus filmes
+                var categoria = context.Categorias
+                   .Include(c => c.Filmes)
+                   .ThenInclude(fc => fc.Filme)
+                   .First();
+
+                
+                Console.WriteLine();
+                Console.WriteLine(categoria);
+                Console.WriteLine("Filmes:");
+
+                foreach (var film in categoria.Filmes)
                 {
-                    Console.WriteLine(categoria.Categoria);
+                    Console.WriteLine($"{film.Filme.Titulo} ({film.Filme.Id}) : {film.Categoria.Nome}");
                 }
+
+
+                Console.WriteLine();
+                Console.WriteLine("Quantidade encontrada:" + categoria.Filmes.Count);
 
             }
         }
