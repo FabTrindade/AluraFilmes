@@ -15,43 +15,29 @@ namespace Alura.Filmes.App
             {
 
                 context.LogSQLToConsole();
-                 
-                //Selecione primeiro filme o mostra sua categoria
-                var filme = context.Filmes
-                     .Include(c => c.Categorias)
-                     .ThenInclude(fc => fc.Categoria)
-                     .First();
 
-                 Console.WriteLine(filme);
-                 Console.WriteLine("Categorias:");
+                //Lista os filmes e categorias de um ator.
+                var ator = context.Atores
+                  .Include(a => a.Filmes)
+                  .ThenInclude(fa => fa.Filme)
+                  .ThenInclude(f => f.Categorias)
+                  .ThenInclude(fc => fc.Categoria)
+                  .ToList();
 
-                 foreach (var cat in filme.Categorias)
-                 {
-                     Console.WriteLine(cat.Categoria);
-                 }
-
-
-
-                //Seleciona uma categoria e mostra seus filmes
-                var categoria = context.Categorias
-                   .Include(c => c.Filmes)
-                   .ThenInclude(fc => fc.Filme)
-                   .First();
-
-                
-                Console.WriteLine();
-                Console.WriteLine(categoria);
-                Console.WriteLine("Filmes:");
-
-                foreach (var film in categoria.Filmes)
+                foreach (var act in ator)
                 {
-                    Console.WriteLine($"{film.Filme.Titulo} ({film.Filme.Id}) : {film.Categoria.Nome}");
+                    Console.WriteLine($"Filme(s) do ator(a) {act.PrimeiroNome} {act.UltimoNome}");
+                    foreach (var film in act.Filmes)
+                    {
+                        Console.Write($"\t{film.Filme.Titulo} ({film.Filme.Id})");
+                        foreach (var cat in film.Filme.Categorias)
+                        {
+                            Console.Write(", " + cat.Categoria.Nome);
+                            Console.WriteLine();
+                        }
+                    }
+                    Console.WriteLine();
                 }
-
-
-                Console.WriteLine();
-                Console.WriteLine("Quantidade encontrada:" + categoria.Filmes.Count);
-
             }
         }
     }
