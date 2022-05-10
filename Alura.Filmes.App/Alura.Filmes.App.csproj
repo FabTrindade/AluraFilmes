@@ -131,6 +131,7 @@
     <Compile Include="Dados\FilmeAtorConfiguracao.cs" />
     <Compile Include="Dados\FilmeCategoriaConfiguration.cs" />
     <Compile Include="Dados\FilmeConfiguration.cs" />
+    <Compile Include="Dados\IdiomaConfiguration.cs" />
     <Compile Include="Migrations\20220502003647_Initial.cs" />
     <Compile Include="Migrations\20220502003647_Initial.designer.cs">
       <DependentUpon>20220502003647_Initial.cs</DependentUpon>
@@ -143,6 +144,7 @@
     <Compile Include="Negocio\Filme.cs" />
     <Compile Include="Negocio\FilmeAtor.cs" />
     <Compile Include="Negocio\FilmeCategoria.cs" />
+    <Compile Include="Negocio\Idioma.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
