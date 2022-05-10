@@ -13,6 +13,8 @@ namespace Alura.Filmes.App.Negocio
         public string AnoLancamento { get; set; }
         public IList<FilmeAtor> Atores { get; set; }
         public IList<FilmeCategoria> Categorias { get; set; }
+        public Idioma IdiomaFalado { get; set; }
+        public Idioma IdiomaOriginal { get; set; }
 
         public Filme()
         {
@@ -22,7 +24,7 @@ namespace Alura.Filmes.App.Negocio
 
         public override string ToString()
         {
-            return $"{Titulo}, {AnoLancamento}, {Duracao} min.\r\n {Descricao}";
+            return $"Filme ({Id}): {Titulo}, {AnoLancamento}, {Duracao} min.\r\n {Descricao}";
         }
     }
 }

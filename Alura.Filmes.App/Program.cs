@@ -16,9 +16,17 @@ namespace Alura.Filmes.App
 
                 context.LogSQLToConsole();
 
-                foreach (var idioma in context.Idiomas)
+                var idioma = context.Idiomas
+                    .Include(f => f.FilmesFalados);
+
+                foreach (var i in idioma)
                 {
-                    Console.WriteLine(idioma);
+                    Console.WriteLine(i);
+                    foreach (var filme in i.FilmesFalados)
+                    {
+                        Console.WriteLine("\t"+filme.Titulo);
+                    }
+                    Console.WriteLine();
                 }
             }
         }
