@@ -11,9 +11,10 @@ using System;
 namespace Alura.Filmes.App.Migrations
 {
     [DbContext(typeof(AtorFilmesContexto))]
-    partial class AtorFilmesContextoModelSnapshot : ModelSnapshot
+    [Migration("20220511220503_Classificacao")]
+    partial class Classificacao
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

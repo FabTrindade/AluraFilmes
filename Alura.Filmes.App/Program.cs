@@ -16,17 +16,18 @@ namespace Alura.Filmes.App
 
                 context.LogSQLToConsole();
 
-                var ator1 = new Ator { PrimeiroNome = "James", UltimoNome = "Watson" };
-                var ator2 = new Ator { PrimeiroNome = "James", UltimoNome = "Watson" };
+                var idioma = new Idioma { Id = 1, Nome = "English" };
 
-                context.Atores.AddRange(ator1, ator2);
+                var filme = new Filme
+                {
+                    Titulo = "Senhor dos aneis",
+                    Duracao = 189,
+                    IdiomaFalado = idioma,
+                    Classificacao = "Qualquer"
+                };
+
+                context.Filmes.Add(filme);
                 context.SaveChanges();
-
-
-                var query = context.Atores
-                    .Where(a => a.PrimeiroNome == "James" && a.UltimoNome == "Watson");
-
-                Console.WriteLine("Encontrados:" + query.Count());
                 
             }
         }
