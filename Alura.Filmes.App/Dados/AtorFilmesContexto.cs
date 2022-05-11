@@ -18,7 +18,7 @@ namespace Alura.Filmes.App.Dados
 
         protected override void OnConfiguring (DbContextOptionsBuilder optionBuilder)
         {
-            optionBuilder.UseSqlServer("Data Source =.; Initial Catalog = AluraFilmes; Integrated Security = true");
+            optionBuilder.UseSqlServer("Data Source =.; Initial Catalog = AluraFilmesTST; Integrated Security = true");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
