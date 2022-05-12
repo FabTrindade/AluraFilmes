@@ -132,6 +132,7 @@
     <Compile Include="Dados\FilmeCategoriaConfiguration.cs" />
     <Compile Include="Dados\FilmeConfiguration.cs" />
     <Compile Include="Dados\IdiomaConfiguration.cs" />
+    <Compile Include="Extensions\ClassificacaoIndicativaExtensions.cs" />
     <Compile Include="Migrations\20220502003647_Initial.cs" />
     <Compile Include="Migrations\20220502003647_Initial.designer.cs">
       <DependentUpon>20220502003647_Initial.cs</DependentUpon>
@@ -161,6 +162,7 @@
     <Compile Include="Dados\AtorFilmesContexto.cs" />
     <Compile Include="Extensions\DbContextExtensions.cs" />
     <Compile Include="Negocio\Categoria.cs" />
+    <Compile Include="Negocio\ClassificacaoIndicativa.cs" />
     <Compile Include="Negocio\Filme.cs" />
     <Compile Include="Negocio\FilmeAtor.cs" />
     <Compile Include="Negocio\FilmeCategoria.cs" />

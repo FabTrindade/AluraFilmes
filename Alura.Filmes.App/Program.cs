@@ -12,23 +12,17 @@ namespace Alura.Filmes.App
         static void Main(string[] args)
         {
             using (var context = new AtorFilmesContexto())
-            {
-
-                context.LogSQLToConsole();
-
-                var idioma = new Idioma { Id = 1, Nome = "English" };
-
-                var filme = new Filme
-                {
-                    Titulo = "Senhor dos aneis",
-                    Duracao = 189,
-                    IdiomaFalado = idioma,
-                    Classificacao = "Qualquer"
-                };
-
-                context.Filmes.Add(filme);
-                context.SaveChanges();
-                
+            { 
+                Console.WriteLine(ClassificacaoIndicativa.CLivre.ParaString() +  " = " + "G".ParaValor());
+                Console.WriteLine();                                                 
+                Console.WriteLine(ClassificacaoIndicativa.C10Anos.ParaString() + " = " + "PG".ParaValor());
+                Console.WriteLine();                                                 
+                Console.WriteLine(ClassificacaoIndicativa.C13Anos.ParaString() + " = " + "PG-13".ParaValor());
+                Console.WriteLine();                                                 
+                Console.WriteLine(ClassificacaoIndicativa.C14Anos.ParaString() + " = " + "R".ParaValor());
+                Console.WriteLine();                                                 
+                Console.WriteLine(ClassificacaoIndicativa.C18Anos.ParaString() + " = " + "NC-17".ParaValor());
+                Console.WriteLine();
             }
         }
     }
