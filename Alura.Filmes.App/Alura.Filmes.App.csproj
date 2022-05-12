@@ -157,6 +157,10 @@
     <Compile Include="Migrations\20220511221104_CheckConstraint.designer.cs">
       <DependentUpon>20220511221104_CheckConstraint.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20220512205443_Enumerados.cs" />
+    <Compile Include="Migrations\20220512205443_Enumerados.designer.cs">
+      <DependentUpon>20220512205443_Enumerados.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\AtorFilmesContextoModelSnapshot.cs" />
     <Compile Include="Negocio\Ator.cs" />
     <Compile Include="Dados\AtorFilmesContexto.cs" />
