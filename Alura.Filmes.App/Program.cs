@@ -15,22 +15,17 @@ namespace Alura.Filmes.App
             {
                 context.LogSQLToConsole();
 
-                var filme = new Filme
+                Console.WriteLine("Clientes:");
+                foreach (var cliente in context.Clientes)
                 {
-                    Titulo = "Jumanji",
-                    Duracao = 189,
-                    AnoLancamento = "1995",
-                    IdiomaFalado = context.Idiomas.First(),
-                    Classificacao = ClassificacaoIndicativa.C14Anos
-                };
+                    Console.WriteLine(cliente);
+                }
 
-                context.Filmes.Add(filme);
-                context.SaveChanges();
-
-                var query = context.Filmes
-                    .FirstOrDefault(a => a.Titulo == "Jumanji");
-
-                Console.WriteLine(query.Classificacao);
+                Console.WriteLine("Funcionários:");
+                foreach (var func in context.Funcionarios)
+                {
+                    Console.WriteLine(func);
+                }
             }
         }
     }
